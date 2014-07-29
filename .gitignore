@@ -1,0 +1,5 @@
+# sources
+/scstadmin-*.tar.gz
+
+# build artifacts
+/scstadmin-*.src.rpm

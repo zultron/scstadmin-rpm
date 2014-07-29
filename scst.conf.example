@@ -1,0 +1,22 @@
+# Example scst config, must be edited before using
+
+[HANDLER vdisk]
+#DEVICE <device name>,<device path>,<options>,<block size>
+
+[HANDLER vcdrom]
+
+[GROUP EXAMPLE_a]
+#USER <user wwn>
+
+[ASSIGNMENT EXAMPLE_a]
+#DEVICE <device name>,<lun>
+
+[ASSIGNMENT Default]
+#DEVICE <device name>,<lun>
+
+
+[TARGETS enable]
+#HOST <wwn identifier>
+
+[TARGETS disable]
+

@@ -1,0 +1,21 @@
+diff -up scstadmin-2.2.1/scstadmin.sysfs/Makefile.perl-build scstadmin-2.2.1/scstadmin.sysfs/Makefile
+--- scstadmin-2.2.1/scstadmin.sysfs/Makefile.perl-build	2011-12-19 08:44:40.611082951 -0600
++++ scstadmin-2.2.1/scstadmin.sysfs/Makefile	2014-07-29 14:19:04.087023865 -0500
+@@ -6,7 +6,7 @@ SBINDIR := /usr/local/sbin
+ all: perl-module
+ 
+ install: all
+-	$(MAKE) -C scst-$(MODULE_VERSION) install
++	$(MAKE) -C scst-$(MODULE_VERSION) pure_install
+ 	install -d $(DESTDIR)$(SBINDIR)
+ 	install -m 755 $(TOOL) $(DESTDIR)$(SBINDIR)
+ 
+@@ -16,7 +16,7 @@ uninstall:
+ 
+ perl-module:
+ 	@cd ./scst-$(MODULE_VERSION); \
+-	perl Makefile.PL;
++	perl Makefile.PL INSTALLDIRS=vendor;
+ 	$(MAKE) -C scst-$(MODULE_VERSION)
+ 
+ clean:
